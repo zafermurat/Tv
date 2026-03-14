@@ -1,219 +1,416 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-
-<meta charset="UTF-8">
+<meta name="theme-color" content="#ff0015">  
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ff0015">
-
-<title>ZAFER TV | Anasayfa</title>
-<meta name="description" content="Zafer Web TV">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+<script src="https://kit.fontawesome.com/254b46a42d.js" crossorigin="anonymous"></script>
+<meta name="author" content="">
+<title> ZAFER TV | Anasayfa</title>
+<meta name="description" content="DeaTHLesS WEBTV" />
+<meta name="keywords" content="DeaTHLesS WEBTV" />
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6vP0k0GtJcVlG8kkg8iq8vlHgGvhG9T8D+0E44MDZcRVViSW8pCFFS72Fn0J5Tw" crossorigin="anonymous">
+<!-- Favicon -->
+<link rel="icon" href=".png">
+<script>
+    if (window !== window.top) {
+        // Eğer sayfa ifrme içinde görüntüleniyorsa, ana sayfaya yönlendirme veya başka bir işlem yapabilirsiniz.
+        window.location = "https://google.com"; // Yönlendirme örneği
+    }
+</script>
+<!-- LOAD LOCAL CSS -->
 <link rel="stylesheet" href="https://videoportal.viavilab.com/site_assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://videoportal.viavilab.com/site_assets/css/owl.carousel.min.css">
-
-<style>
-
-body{
-background:#0f172a;
-color:white;
-font-family:Arial;
-margin:0;
-}
-
+<link rel="stylesheet" href="https://videoportal.viavilab.com/site_assets/css/megamenu.css">
+<link rel="stylesheet" href="https://videoportal.viavilab.com/site_assets/css/ionicons.css">
+<link rel="stylesheet" href="https://videoportal.viavilab.com/site_assets/css/font-awesome.min.css">
+   
+<link rel="stylesheet" href="https://videoportal.viavilab.com/site_assets/css/color-style/style-six.css" id="theme">
+<link rel="stylesheet" href="./style.css">
+<!-- Splide Slider CSS -->
+<link rel="stylesheet" href="https://videoportal.viavilab.com/site_assets/css/splide.min.css">
+<link rel="stylesheet" href="https://videoportal.viavilab.com/site_assets/css/jquery-eu-cookie-law-popup.css">
+<!-- SweetAlert2 -->
+<script src="sweetalert2@11.js">https://videoportal.viavilab.com/site_assets/js/sweetalert2@11.js"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
+  
+  
+ <style type="text/css">
+      .search .search-input input[type=text]::placeholder, .search .search-input input[type=text].focus {
+          background: #000000 !important; 
+      }
+ /*****************************************************************
+    Preview Header Buy Now
+*****************************************************************/
 header{
-height:60px;
-background:linear-gradient(90deg,#ff0015,#ff6600);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:20px;
-font-weight:bold;
+    margin-top:48px;
 }
-
-.video-section{
-padding:20px;
+.vfx_preview_header {
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    position: absolute;
 }
-
-.video-title{
-display:flex;
-justify-content:space-between;
-margin-bottom:10px;
+.header_top {
+    display: inline-block;
+    padding: 11px 5px;
+    position: relative;
+    min-height: 50px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #ffffff;
+    width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
-
-.video-title h3{
-margin:0;
+.preview_envato_logo {
+    float: left;
+    padding: 0;
 }
-
-.video-carousel .single-video{
-margin-right:10px;
+.preview_envato_logo a {
+    display: inline-block;
+    position: absolute;
+    top: 14px;
+    text-indent: -9999px;
+    height: 18px;
+    width: 152px;
+    background: url(https://public-assets.envato-static.com/assets/logos/envato_market-a5ace93f8482e885ae008eb481b9451d379599dfed24868e52b6b2d66f5cf633.svg);
+    background-size: auto;
+    background-size: 152px 18px;
 }
-
-.video-img{
-position:relative;
+.vfx_preview_header + header:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    content: "";
+    height: 60px;
+    position: absolute;
+    background-size: 200% 200%;
+    -webkit-animation: gradientChange 5s ease infinite;
+            animation: gradientChange 5s ease infinite;
+    background-image: -webkit-gradient(linear, right top, left top, from(#3d9bfc), color-stop(#7b40e4), color-stop(#f53a8b), color-stop(#ee704a), to(#ddd24c));
+    background-image: linear-gradient(270deg, #3d9bfc, #7b40e4, #f53a8b, #ee704a, #ddd24c);
 }
-
-.video-img img{
-width:180px;
-border-radius:10px;
+.vfx_preview_contant {
+    padding: 0 10px;
+    display: block;
+    margin: 0 auto;
+    width: max-content;
 }
-
-.video-item-content{
-position:absolute;
-bottom:5px;
-left:5px;
-background:rgba(0,0,0,0.7);
-padding:3px 6px;
-font-size:12px;
-border-radius:5px;
+.vfx_preview_contant p{
+    margin-bottom:0;
+    color:#ffffff;
 }
-
-footer{
-margin-top:40px;
-text-align:center;
-padding:20px;
-background:#020617;
+.vfx_preview_buy_now{
+    padding: 0 5px 0 10px;
+    display: block;
+    right: 0;
+    top:13px;
+    position: absolute;
 }
-
-footer a{
-color:#ff0015;
-text-decoration:none;
-margin:10px;
+.buy-now-btn{
+    background: #ffffff;
+    border-radius: 4px;
+    color: #fd0575;
+    font-size: 14px;
+    font-weight:700;
+    padding: 6px 20px;
+    line-height: 1.5;
+    text-transform:uppercase;
+    box-shadow:0 1px 8px rgba(0, 0, 0, 0.15);
 }
-
-</style>
-
+.buy-now-btn:hover{
+    background:#b71850;
+    color:#ffffff;
+}
+@media only screen and (max-width:639px) {
+.vfx_preview_contant{
+    display:none;
+}
+}
+/*****************************************************************
+    CSS Animation - Start
+*****************************************************************/
+.layer {
+  position: relative !important;
+}
+@-webkit-keyframes dropDown {
+  0% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes dropDown {
+  0% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes gradientChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradientChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes radiusAnimation {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+@keyframes radiusAnimation {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+.radius_animation {
+  -webkit-animation: radiusAnimation 8s ease-in-out infinite;
+          animation: radiusAnimation 8s ease-in-out infinite;
+}
+/*****************************************************************
+    CSS Animation - End
+*****************************************************************/     
+ </style>
 </head>
-
-<body>
-
-<header>
-ZAFER WEB TV
-</header>
-
-<div class="video-section">
-
-<div class="video-title">
-<h3>Spor Kanalları</h3>
-<span>Yana Kaydır</span>
-</div>
-
-<div class="video-carousel owl-carousel">
-
-<div class="single-video">
-<a href="https://api.hitnova.net/s/zirve/mono.m3u8">
-<div class="video-img">
-<span class="video-item-content">beIN Sport 1</span>
-<img src="https://i.ibb.co/GC3SM8Y/5.png">
-</div>
-</a>
-</div>
-
-<div class="single-video">
-<a href="https://api.hitnova.net/s/b2/mono.m3u8">
-<div class="video-img">
-<span class="video-item-content">beIN Sport 2</span>
-<img src="https://i.ibb.co/ctHN9Mc/11.png">
-</div>
-</a>
-</div>
-
-<div class="single-video">
-<a href="https://api.hitnova.net/s/b3/mono.m3u8">
-<div class="video-img">
-<span class="video-item-content">beIN Sport 3</span>
-<img src="https://i.ibb.co/P67xMR6/15.png">
-</div>
-</a>
-</div>
-
-<div class="single-video">
-<a href="https://api.hitnova.net/s/b4/mono.m3u8">
-<div class="video-img">
-<span class="video-item-content">beIN Sport 4</span>
-<img src="https://i.ibb.co/N1Mw6m9/19.png">
-</div>
-</a>
-</div>
-
-<div class="single-video">
-<a href="https://api.hitnova.net/s/b5/mono.m3u8">
-<div class="video-img">
-<span class="video-item-content">beIN Sport 5</span>
-<img src="https://i.ibb.co/F0k5pz7/23.png">
-</div>
-</a>
-</div>
-
-<div class="single-video">
-<a href="https://api.hitnova.net/s/smarts/mono.m3u8">
-<div class="video-img">
-<span class="video-item-content">Smart Spor 1</span>
-<img src="https://www.dsmart.com.tr/api/v1/public/images/kanallar/sporsmart.png">
-</div>
-</a>
-</div>
-
-<div class="single-video">
-<a href="https://api.hitnova.net/s/sms2/mono.m3u8">
-<div class="video-img">
-<span class="video-item-content">Smart Spor 2</span>
-<img src="https://www.dsmart.com.tr/api/v1/public/images/kanallar/SPORSMART2-gri.png">
-</div>
-</a>
-</div>
-
-</div>
-</div>
-
-<footer>
-
-<a href="https://t.me/Zaferri">Telegram</a>
-
-<p>Copyright © 2025 ZAFER TV</p>
-
-</footer>
-
-<script src="https://videoportal.viavilab.com/site_assets/js/jquery-3.3.1.min.js"></script>
-<script src="https://videoportal.viavilab.com/site_assets/js/owl.carousel.min.js"></script>
-
 <script>
-
-$('.owl-carousel').owlCarousel({
-loop:true,
-margin:10,
-nav:false,
-responsive:{
-0:{items:2},
-600:{items:3},
-1000:{items:5}
-}
+document.addEventListener('DOMContentLoaded', function () {
+    var links = document.querySelectorAll('a'); // Tüm <a> etiketlerini seç
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Varsayılan yönlendirmeyi engelle
+            var href = this.getAttribute('href'); // Yönlendirilecek URL'yi al
+            Swal.fire({
+                title: 'Yönleniyor...',
+                text: 'Lütfen bekleyin.',
+                allowOutsideClick: false, // Dışarı tıklandığında kapanmasını engelle
+                timer: 1000, // 1 saniye sonra otomatik kapan
+                didOpen: () => {
+                    Swal.showLoading();
+                },
+                willClose: () => {
+                    window.location.href = href; // Yönlendirmeyi burada başlat
+                }
+            });
+        });
+    });
 });
-
-document.querySelectorAll("a").forEach(link=>{
-link.addEventListener("click",function(e){
-
-let url=this.href;
-
-e.preventDefault();
-
-Swal.fire({
-title:"Yükleniyor",
-text:"Lütfen bekleyin",
-timer:1000,
-didOpen:()=>{Swal.showLoading()}
-}).then(()=>{
-window.location=url
-})
-
-})
-})
-
 </script>
-
+<body>
+  
+<div class="vfx_preview_header">
+    <div class="container-fluid">
+        <div class="header_top">
+            <div class="preview_envato_logo">
+                <img height="25" src="https://i.hizliresim.com/jby0e73.png" alt="">
+            </div>
+            <div class="vfx_preview_contant">
+                <p>ZAFER WEB TV</p>
+            </div>
+            <div class="vfx_preview_buy_now">
+                <a  style="position:relative;left:8px" class="buy-now-btn" href="https://t.me/Zaferri">aDeveloperi Görüntüle</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Start Header -->
+<header>
+  <!-- Start Upcoming Section -->
+<div class="video-shows-section vfx-item-ptb">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="vfx-item-section">
+                <a  title="Live TV"><h3>Spor Kanalları</h3></a>
+                <span class="view-more">
+                 <a  title="view-more">Yana Kaydır</a>
+                </span>
+              </div>
+<div class="video-carousel owl-carousel">
+  <div class="single-video">
+    <a href="https://api.hitnova.net/s/zirve/mono.m3u8">
+      <div class="video-img">
+        <span class="video-item-content">beIN Sport 1 HD</span>
+        <img src="https://i.ibb.co/GC3SM8Y/5.png" alt="ABP Asmita" />
+      </div>
+    </a>
+  </div>
+  <div class="single-video">
+    <a href="https://api.hitnova.net/s/b2/mono.m3u8">
+      <div class="video-img">
+        <span class="video-item-content">beIN Sport 2 HD</span>
+        <img src="https://i.ibb.co/ctHN9Mc/11.png" alt="ABP Asmita" />
+      </div>
+    </a>
+  </div>
+  <div class="single-video">
+    <a href="https://api.hitnova.net/s/b3/mono.m3u8">
+      <div class="video-img">
+        <span class="video-item-content">beIN Sport 3 HD</span>
+        <img src="https://i.ibb.co/P67xMR6/15.png" alt="ABP Asmita" />
+      </div>
+    </a>
+  </div>
+  <div class="single-video">
+    <a href="https://api.hitnova.net/s/b4/mono.m3u8">
+      <div class="video-img">
+        <span class="video-item-content">beIN Sport 4 HD</span>
+        <img src="https://i.ibb.co/N1Mw6m9/19.png" alt="ABP Asmita" />
+      </div>
+    </a>
+  </div>
+  <div class="single-video">
+    <a href="https://api.hitnova.net/s/b5/mono.m3u8">
+      <div class="video-img">
+        <span class="video-item-content">beIN Sport 5 HD</span>
+        <img src="https://i.ibb.co/F0k5pz7/23.png" alt="ABP Asmita" />
+      </div>
+    </a>
+  </div>
+  <div class="single-video">
+    <a href="https://api.hitnova.net/s/bm1/mono.m3u8">
+      <div class="video-img">
+        <span class="video-item-content">beIN Sport MAX 1 HD</span>
+        <img src="https://i.ibb.co/L8hvK4F/27.png" alt="ABP Asmita" />
+      </div>
+    </a>
+  </div>
+  <div class="single-video">
+    <a href="https://api.hitnova.net/s/bm2/mono.m3u8">
+      <div class="video-img">
+        <span class="video-item-content">beIN Sport MAX 2 HD</span>
+        <img src="https://i.ibb.co/fxRq3j4/29.png" alt="ABP Asmita" />
+      </div>
+    </a>
+  </div>
+ <!-- Start Footer Area -->
+<footer>
+  <div class="footer-area vfx-item-ptb">
+    <div class="footer-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+      
+          
+            <div class="footer-bottom">
+        <div class="footer-links">
+          <ul>
+          <li><a href="https://t.me/Zaferri" class=" active" title="home">Anasayfa</a></li>
+                    <li><a href="https://t.me/Zaferri" target="_blank" >Telegram</a></li>
+                           
+           
+          </ul>
+        </div>
+        <div class="copyright-text">
+          <p>Copyright © 2025 ZAFERRI</p>
+        </div>
+      </div>
+      </div>
+     
+             
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>  
+  
+  <!-- Start Scroll Top Area -->
+  <div class="scroll-top">
+    <div class="scroll-icon"> <i class="fa fa-angle-up"></i> </div>
+  </div>
+  <!-- End Scroll Top Area -->  
+  
+</footer>
+<!-- End Footer Area --> 
+<div id="logout_remotly" class="modal fade centered-modal in" role="dialog" aria-labelledby="logout_remotly" aria-hidden="true">  
+    <div class="modal-dialog modal-dialog-centered modal-md">
+       <div class="modal-content">
+        <div class="modal-header">           
+          <h4 class="modal-title">Remotly Logout Alert!</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Hey there! You have remotly logout from this device. You will be redirected in 5 seconds.</p>     
+        </div>
+         
+      </div>      
+    </div>
+  </div>
+<div id="popup1" class="popup-view popup-overlay">
+  <div class="search">
+    <div class="search-container has-results"><span class="title">Search</span>
+      <div class="search-input">
+        <input type="text" name="s" id="search_box" class="search-container-input" placeholder="Title" onkeyup="showSuggestions(this.value)" style="background: #000000;">
+      </div>
+    </div>
+    <div class="search-results mt-4" id="search_output">
+        
+    </div>
+  </div>
+  <a class="close" href="#" title="close"><i class="ion-close-round"></i></a>
+</div>     
+<div class="eupopup eupopup-bottom"></div>
+  
+  <!-- Load Local JS --> 
+<script src="https://videoportal.viavilab.com/site_assets/js/jquery-3.3.1.min.js"></script> 
+<script src="https://videoportal.viavilab.com/site_assets/js/jquery.easing.min.js"></script> 
+<script src="https://videoportal.viavilab.com/site_assets/js/bootstrap.min.js"></script> 
+<script src="https://videoportal.viavilab.com/site_assets/js/owl.carousel.min.js"></script>
+<script src="https://videoportal.viavilab.com/site_assets/js/jquery.nice-select.min.js"></script>  
+<script src="https://videoportal.viavilab.com/site_assets/js/megamenu.js"></script> 
+<!-- Splide Slider JS -->
+<script src="https://videoportal.viavilab.com/site_assets/js/splide.min.js"></script>
+<!-- Custom Main JS -->
+<script src="https://videoportal.viavilab.com/site_assets/js/custom-main.js"></script>
+<script src="https://videoportal.viavilab.com/site_assets/js/jquery-eu-cookie-law-popup.js"></script> 
+<script type="text/javascript">
+  
+  $("li[data-path]").click(function() {
+    $("head link#theme").attr("href", $(this).data("path"));
+});
+</script>
+   
 </body>
 </html>
