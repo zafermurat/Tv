@@ -2,7 +2,11 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#080b10">
 <title>CANLI TV ULTRA PRO</title>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1284,6 +1288,104 @@ header {
   .logo-badge { display: none; }
 }
 
+/* ===== TAM MOBİL UYUMLULUK ===== */
+@media (max-width: 768px) {
+  /* Header mobil iyileştirme */
+  .search-bar { flex: 1; max-width: 200px; }
+  .search-bar input { width: 100%; }
+
+  /* TV layout: alt alta */
+  .tv-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: calc(100vh - 56px);
+    overflow: hidden;
+  }
+  .main { order: 1; flex: 0 0 auto; }
+  .sidebar {
+    order: 2;
+    flex: 1;
+    overflow: hidden;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    height: 100%;
+  }
+
+  /* Player oranı 16:9 mobil */
+  .player-ratio { padding-top: 56.25%; }
+
+  /* Kanal listesi mobil yüksekliği */
+  .channel-list { max-height: calc(100vh - 380px); min-height: 200px; }
+
+  /* Kontroller mobil */
+  .ctrl-bar { padding: 8px 10px; gap: 6px; flex-wrap: wrap; }
+  .np { order: 1; width: 100%; }
+  .ctrl-btns { order: 2; width: 100%; justify-content: space-between; }
+  .cb { flex: 1; min-width: 0; padding: 6px 4px; font-size: 11px; height: 34px; }
+  .vol-wrap { order: 3; flex: 1; }
+
+  /* Sağ panel (EPG/Chat/Bilgi) mobilde scroll */
+  .right-panel { max-height: 200px; overflow-y: auto; }
+
+  /* Tab bar mobil */
+  .tab-content.active { flex-direction: column; }
+
+  /* Kanal kartı */
+  .ch-logo { width: 36px; height: 36px; font-size: 15px; }
+  .ch-name { font-size: 11px; }
+
+  /* Overlay kontrolleri dokunmatik için büyüt */
+  .ov-btn { width: 36px; height: 36px; font-size: 14px; }
+
+  /* Fullscreen butonu dokunmatik */
+  .top-overlay { padding: 8px 12px; }
+
+  /* Modal mobil */
+  .modal-box { width: calc(100vw - 20px) !important; max-height: 90vh; overflow-y: auto; margin: 10px; }
+
+  /* Settings grid */
+  .settings-grid { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Admin panel mobil */
+  .admin-layout { flex-direction: column; height: auto; }
+  .admin-sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+  .admin-sidebar-items { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px; }
+  .sidebar-item { flex: 0 0 auto; padding: 6px 10px; border-radius: 8px; }
+  .admin-content { height: auto; min-height: calc(100vh - 200px); }
+  .stats-row { flex-wrap: wrap; }
+  .stat-card { flex: 1 1 calc(50% - 8px); min-width: 120px; }
+  .admin-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+@media (max-width: 480px) {
+  /* Küçük telefon için ek düzenlemeler */
+  header { padding: 8px 10px; }
+  .logo { font-size: 16px; letter-spacing: 2px; }
+  .logo-dot { width: 7px; height: 7px; }
+  .search-bar { display: none; }
+  .search-mobile-toggle { display: flex !important; }
+
+  .ctrl-bar { padding: 6px 8px; }
+  .cb { height: 30px; font-size: 10px; }
+  .np-logo { width: 30px; height: 30px; }
+  .np-title { font-size: 12px; }
+  .np-group { font-size: 10px; }
+
+  .channel { padding: 7px 8px; gap: 8px; }
+  .ch-logo { width: 32px; height: 32px; border-radius: 7px; }
+  .fav-btn { font-size: 13px; }
+
+  /* Cat bar küçük */
+  .cat-pill { font-size: 9px; padding: 3px 8px; }
+
+  /* Sidebar tabs */
+  .tab-btn { font-size: 9px; padding: 10px 4px; letter-spacing: 0.5px; }
+
+  /* Stat kartları 2 kolon */
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+}
+
 
 /* ============================================
    ADMIN PANEL CSS
@@ -1837,7 +1939,7 @@ tr:last-child td{border:none;}
         <div class="dropdown" id="profileDrop" style="min-width:200px;right:0;">
           <div class="pd-header">
             <div class="pd-name" id="pdName">Misafir</div>
-            <div class="pd-email" id="pdEmail">guest@canlitv.com</div>
+            <div class="pd-email" id="pdEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0f687a6a7c7b4f6c6e6163667b79216c6062">[email&#160;protected]</a></div>
             <span class="pd-plan">PRO</span>
           </div>
           <div class="drop-item" onclick="switchMainTab('settings',null);toggleDrop('profileDrop');">⚙️ Ayarlar</div>
@@ -2042,7 +2144,7 @@ tr:last-child td{border:none;}
         </div>
         <div style="flex:1">
           <div class="profile-name" id="settingsName">Misafir</div>
-          <div class="profile-email-txt" id="settingsEmail">guest@canlitv.com</div>
+          <div class="profile-email-txt" id="settingsEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f19684948285b192909f9d988587df929e9c">[email&#160;protected]</a></div>
           <button class="edit-btn" onclick="showToast('✏️ Profil düzenleme yakında!','info')">Profili Düzenle</button>
         </div>
         <div>
@@ -2274,7 +2376,7 @@ tr:last-child td{border:none;}
 
 <div class="toast" id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 /* SPLASH SCREEN */
 (function(){
@@ -2593,19 +2695,31 @@ function play(idx){
   document.getElementById('playerIdle').style.display = 'none';
   video.style.display = 'block';
 
-  if(Hls.isSupported()){
-    if(hls) hls.destroy();
-    hls = new Hls({ maxBufferLength:30 });
-    hls.loadSource(ch.url);
+  const _url = ch.url;
+  const _isHLS = _url.includes('.m3u8') || _url.includes('/hls/') || _url.includes('playlist');
+
+  if(hls){ hls.destroy(); hls = null; }
+
+  if(!_isHLS){
+    // Düz HTTP stream (port tabanlı, .ts vb.)
+    video.src = _url;
+    video.play().catch(()=>{ showToast('▶ Oynatmak için ekrana dokunun','warning'); });
+  } else if(Hls.isSupported()){
+    hls = new Hls({ maxBufferLength:30, enableWorker:true });
+    hls.loadSource(_url);
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, ()=>video.play().catch(()=>{}));
     hls.on(Hls.Events.ERROR, (e,d)=>{
-      if(d.fatal) showToast('⚠️ Stream hatası. Tekrar deneniyor...','warning');
+      if(d.fatal){
+        showToast('⚠️ HLS hatası, direkt deneniyor...','warning');
+        hls.destroy(); hls=null;
+        video.src = _url; video.play().catch(()=>{});
+      }
     });
   } else if(video.canPlayType('application/vnd.apple.mpegurl')){
-    video.src = ch.url; video.play().catch(()=>{});
+    video.src = _url; video.play().catch(()=>{});
   } else {
-    video.src = ch.url;
+    video.src = _url;
   }
 
   const vol = +document.getElementById('volSlider').value;
@@ -2861,7 +2975,7 @@ function renderChInfo(ch){
       <div class="info-row"><span class="info-row-label">Kalite</span><span class="info-row-value">${document.getElementById('qualitySelect')?.value==='auto'?'Otomatik (HD)':document.getElementById('qualitySelect')?.value||'HD'}</span></div>
       <div class="info-row"><span class="info-row-label">Kategori</span><span class="info-row-value">${ch.group}</span></div>
       <div class="info-row"><span class="info-row-label">İzleyici</span><span class="info-row-value" style="color:var(--green)">● ${ch.viewers?.toLocaleString()||'-'}</span></div>
-      <div class="info-row"><span class="info-row-label">URL</span><span class="info-row-value" style="font-size:10px;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${ch.url}">${ch.url.substring(0,40)}...</span></div>
+
     </div>`;
 }
 
@@ -4334,17 +4448,17 @@ function downloadFile(name, content, type){
 function exportData(){
   const data={channels:allChannelsAdmin.length,users:getUsers().length+1,exported:new Date().toISOString()};
   downloadFile('admin-export.json',JSON.stringify(data,null,2),'application/json');
-  showToast('📥 Veriler dışa aktarıldı','success');
+  showToast('📥 Veri dışa aktarıldı','success');
 }
 
-/* SEED INITIAL LOGS */
-addLog('system','system','🚀 Admin paneli başlatıldı','var(--green)');
-addLog('login','login','🔑 Admin girişi yapıldı','var(--blue)');
-addLog('system','system','📋 M3U listesi yükleniyor...','var(--muted)');
+/* INIT */
+window.addEventListener('load', ()=>{
+  setTimeout(()=>{
+    document.getElementById('splash').style.opacity='0';
+    setTimeout(()=>{ document.getElementById('splash').style.display='none'; document.getElementById('loginScreen').style.display='flex'; },500);
+  },2200);
+});
 
 </script>
-
-</div><!-- /adminPanelWrapper -->
-
 </body>
-</html>
+  </html>
